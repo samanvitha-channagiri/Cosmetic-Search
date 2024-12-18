@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Cosmetic Search</title>
+    <link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+        <div class="container header-container">
+            <div class="logo">Cosmetic Search</div>
+            <a href="index.html">Back to Search</a>
+        </div>
+    </header>
+
+    <!-- Product Details Section -->
+    <section id="product-detail" class="container">
+        <div class="product-card">
+            <img id="product-image" src="" alt="Product Image">
+            <h3 id="product-name"></h3>
+            <p id="product-description"></p>
+            <p><strong>Brand:</strong> <span id="product-brand"></span></p>
+            <p><strong>Price:</strong> <span id="product-price"></span></p>
+            <p><strong>Rating:</strong> <span id="product-rating"></span> stars</p>
+            <p><strong>Ingredients:</strong> <span id="product-ingredients"></span></p>
+            <p><strong>Shades:</strong> <span id="product-shades"></span></p>
+        </div>
+
+        <!-- Add to Cart and Buy Now buttons -->
+        <div class="buttons">
+            <button id="add-to-cart" onclick="addToCart()">Add to Cart</button>
+            <button id="buy-now" onclick="buyNow()">Buy Now</button>
+        </div>
+
+        <!-- Reviews Section -->
+        <div id="review-section">
+            <h4>Reviews</h4>
+            <div id="review-list">
+                <!-- Reviews will be inserted here dynamically -->
+            </div>
+            <textarea id="review-input" placeholder="Write your review..."></textarea>
+            <button id="submit-review" onclick="submitReview()">Submit Review</button>
+        </div>
+
+        <!-- Suggested Products Section -->
+        <div id="suggested-products">
+            <h4>Related Products</h4>
+            <div id="related-products-list"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <p>&copy; 2024 CosmeticSearch. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/productdata.js"></script>
+    <script src="js/productDetails.js"></script>
+</body>
+</html>

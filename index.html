@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmetic Search - E-commerce</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+        <div class="container header-container">
+            <div class="logo">Cosmetic Search</div>
+            <input type="text" id="search-bar" placeholder="Search for products..." oninput="searchProducts()">
+            <div class="nav-icons">
+                <span class="icon-cart" onclick="viewCart()">🛒</span>
+                <span class="icon-user">👤</span>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <div class="container hero-container">
+            <div id="image-carousel" class="carousel"></div>
+            <div class="carousel-buttons">
+                <button id="prev-button" class="carousel-button">❮</button>
+                <button id="next-button" class="carousel-button">❯</button>
+            </div>
+            <div id="carousel-dots" class="carousel-dots"></div>
+        </div>
+    </section>    
+    
+    <!-- Filter Section -->
+    <section id="filters" class="container filters-section">
+        <div class="filter-item">
+            <label for="category-filter">Category</label>
+            <select id="category-filter" onchange="filterProducts()">
+                <option value="">All Categories</option>
+                <option value="skincare">Skincare</option>
+                <option value="makeup">Makeup</option>
+                <option value="haircare">Haircare</option>
+                <option value="fragrances">Fragrances</option>
+            </select>
+        </div>
+        <div class="filter-item">
+            <label for="price-range">Price Range: ₹<span id="price-min">80</span> - ₹<span id="price-max">1000</span></label>
+            <div class="price-slider-container">
+                <input type="range" id="price-min-range" min="80" max="1000" step="5" value="80" oninput="updatePriceRange()">
+                <input type="range" id="price-max-range" min="80" max="1000" step="5" value="1000" oninput="updatePriceRange()">
+            </div>
+        </div>
+        <div class="filter-item">
+            <label for="rating-filter">Rating</label>
+            <select id="rating-filter" onchange="filterProducts()">
+                <option value="">All Ratings</option>
+                <option value="4">4 stars and above</option>
+                <option value="3">3 stars and above</option>
+                <option value="2">2 stars and above</option>
+            </select>
+        </div>
+        <div class="filter-item">
+            <label for="sort-options">Sort By</label>
+            <select id="sort-options" onchange="sortProducts()">
+                <option value="">Default</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating-desc">Rating: High to Low</option>
+            </select>
+        </div>
+        <div class="filter-actions">
+            <button id="reset-filters" onclick="resetFilters()">Reset Filters</button>
+            <button id="toggle-view" onclick="toggleView()">Toggle View</button>
+        </div>
+    </section>
+
+    <!-- Product Grid -->
+    <section id="product-grid" class="container product-grid">
+        <!-- Dynamic product cards will be inserted here -->
+    </section>
+
+    <!-- Pagination -->
+    <div id="pagination" class="container pagination"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <p>&copy; 2024 CosmeticSearch. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/productdata.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
